@@ -1,0 +1,10 @@
+<div *ngIf="!isAuthenticated">Authenticating...
+</div>
+<div *ngIf="isAuthenticated">
+  <strong>{{userName}}</strong>
+  <div *ngFor="let value of values">
+    <p>{{value}}</p>
+  </div>
+
+  <button (click)="logout()">Logout</button>
+</div>
