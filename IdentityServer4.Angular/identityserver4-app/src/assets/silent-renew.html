@@ -10,7 +10,7 @@
   <p>Loading...</p>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/oidc-client/1.6.1/oidc-client.min.js"></script>
   <script>
-    new Oidc.UserManager.UserManager().signinSilentCallback().catch(function (e) {
+    new Oidc.UserManager().signinSilentCallback().catch(function (e) {
       console.error(e);
     });
   </script>
