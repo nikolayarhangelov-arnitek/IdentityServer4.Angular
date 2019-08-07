@@ -9,8 +9,8 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/oidc-client/1.6.1/oidc-client.min.js"></script>
   <script>
-    new Oidc.UserManager().signinRedirectCallback().then(function () {
-      window.location = 'index.html';
+    new Oidc.UserManager().signinRedirectCallback().then(function (user) {
+      window.location = user.state || 'index.html';
     }).catch(function (e) {
       console.error(e);
     });
