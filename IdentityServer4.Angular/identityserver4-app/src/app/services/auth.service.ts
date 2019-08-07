@@ -47,7 +47,11 @@ export class AuthService {
   }
 
   login(): void {
-    this.userManager.signinRedirect();
+    // Prepare args with the return url as user state.
+    var args = {
+      state: window.location.pathname + window.location.search
+    };
+    this.userManager.signinRedirect(args);
   }
 
   logout(): void {
